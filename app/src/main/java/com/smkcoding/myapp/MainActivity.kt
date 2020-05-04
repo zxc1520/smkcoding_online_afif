@@ -3,6 +3,7 @@ package com.smkcoding.myapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -12,18 +13,37 @@ class MainActivity : AppCompatActivity() {
     private var inputEmail : String = ""
     private var telpInput : String = ""
     private var inputAlamat : String = ""
-    private  var inputGender : String = ""
+    private var inputGender : String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setDataSpinner()
+
         //tes komentar
         btnSave.setOnClickListener { validate() }
+
+    }
+
+    private fun setDataSpinner() {
+        val adapter = ArrayAdapter.createFromResource(this, R.array.jk, android.R.layout.simple_spinner_item)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinnerGender.adapter = adapter
     }
 
     private fun goToProfil() {
         val intent = Intent(this, ProfilActivity::class.java)
+
+        val bundle = Bundle()
+        bundle.putString("nama", inputName)
+        bundle.putString("gender", inputGender)
+        bundle.putString("email", inputEmail)
+        bundle.putString("telp", telpInput)
+        bundle.putString("alamat", inputAlamat)
+
+        intent.putExtras(bundle)
+
         startActivity(intent)
     }
 

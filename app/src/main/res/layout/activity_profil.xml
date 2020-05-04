@@ -118,6 +118,7 @@
                     android:text="Telp: "/>
 
                 <TextView
+                    android:id="@+id/tv_telp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -140,6 +141,7 @@
                     android:text="Address: "/>
 
                 <TextView
+                    android:id="@+id/tv_alamat"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
