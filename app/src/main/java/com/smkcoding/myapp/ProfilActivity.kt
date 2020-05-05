@@ -2,9 +2,11 @@ package com.smkcoding.myapp
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_profil.*
 
 class ProfilActivity : AppCompatActivity() {
@@ -15,6 +17,7 @@ class ProfilActivity : AppCompatActivity() {
 
         ambilData()
         btnEditName.setOnClickListener { navigasiKeEditProfil() }
+        btn_dial.setOnClickListener { dialPhoneNumber(tv_telp.text.toString()) }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -57,6 +60,16 @@ class ProfilActivity : AppCompatActivity() {
         intent.putExtra("nama", userName)
 
         startActivityForResult(intent, REQUEST_CODE)
+    }
+
+    private fun dialPhoneNumber(phoneNumber: String) {
+        val intent = Intent(Intent.ACTION_DIAL).apply {
+            data = Uri.parse("tel:$phoneNumber")
+        }
+
+        if (intent.resolveActivity(packageManager) != null) {
+            startActivity(intent)
+        }
     }
 
 }
