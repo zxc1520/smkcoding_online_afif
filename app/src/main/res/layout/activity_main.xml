@@ -39,6 +39,14 @@
             android:entries="@array/jk"/>
 
         <EditText
+            android:id="@+id/umur"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/edit_text"
+            android:hint="Umur(th)"/>
+
+        <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="50dp"

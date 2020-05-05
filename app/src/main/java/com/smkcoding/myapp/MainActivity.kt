@@ -10,6 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     private var inputName : String = ""
+    private var inputUmur : String = ""
     private var inputEmail : String = ""
     private var telpInput : String = ""
     private var inputAlamat : String = ""
@@ -38,6 +39,7 @@ class MainActivity : AppCompatActivity() {
         val bundle = Bundle()
         bundle.putString("nama", inputName)
         bundle.putString("gender", inputGender)
+        bundle.putString("umur", inputUmur)
         bundle.putString("email", inputEmail)
         bundle.putString("telp", telpInput)
         bundle.putString("alamat", inputAlamat)
@@ -50,6 +52,7 @@ class MainActivity : AppCompatActivity() {
     private fun validate() {
 
         inputName = nama.text.toString()
+        inputUmur = umur.text.toString()
         inputEmail = email.text.toString()
         telpInput = telp.text.toString()
         inputAlamat = addres.text.toString()
@@ -61,6 +64,7 @@ class MainActivity : AppCompatActivity() {
                 "Pilih jenis kelamin",
                 ignoreCase = true
             ) -> showToast("Jenis kelamin harus dipilih")
+            inputUmur.isEmpty() -> umur.error = "Umur harus diisi"
             inputEmail.isEmpty() -> email.error = "Email harus diisi"
             telpInput.isEmpty() -> telp.error = "Telepon harus diisi"
             inputAlamat.isEmpty() -> addres.error = "Alamat harus diisi"
