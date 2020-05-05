@@ -30,6 +30,7 @@
             android:layout_centerHorizontal="true"/>
         
         <LinearLayout
+            android:id="@+id/content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -150,22 +151,28 @@
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/btnEditName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Edit Nama"/>
-
-            <Button
-                android:id="@+id/btn_dial"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Telepon"/>
-
-
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEditName"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Edit Nama"
+            android:background="@drawable/button"
+            android:textColor="#fff"
+            android:layout_below="@id/content"/>
+
+        <Button
+            android:id="@+id/btn_dial"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Telepon"
+            android:background="@drawable/button"
+            android:textColor="#fff"
+            android:layout_below="@id/content"
+            android:layout_toRightOf="@id/btnEditName"/>
 
     </RelativeLayout>
 

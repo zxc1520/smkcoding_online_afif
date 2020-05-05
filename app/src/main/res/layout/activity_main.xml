@@ -25,28 +25,32 @@
         <EditText
             android:id="@+id/nama"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text"
             android:hint="Nama"
             android:layout_margin="16dp"/>
         
         <Spinner
             android:id="@+id/spinnerGender"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text"
             android:layout_margin="16dp"
             android:entries="@array/jk"/>
 
         <EditText
             android:id="@+id/email"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text"
             android:layout_margin="16dp"
             android:hint="Email"/>
 
         <EditText
             android:id="@+id/telp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:background="@drawable/edit_text"
             android:hint="Telp"
             android:layout_margin="16dp"
             android:inputType="phone"/>
@@ -55,6 +59,7 @@
             android:id="@+id/addres"
             android:layout_width="match_parent"
             android:layout_height="120dp"
+            android:background="@drawable/edit_text"
             android:layout_margin="16dp"
             android:hint="Alamat"
             android:inputType="textMultiLine"/>
@@ -63,7 +68,9 @@
             android:id="@+id/btnSave"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/button"
             android:layout_margin="16dp"
+            android:textColor="#fff"
             android:text="Submit"/>
 
     </LinearLayout>
